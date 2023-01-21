@@ -14,6 +14,7 @@ public class Exercise001Test {
         assertEquals("Hello", ex001.capitalizeWord("hello"));
         assertEquals("The quick fox", ex001.capitalizeWord("the quick fox"));
         assertEquals("Oh no, bears!!!", ex001.capitalizeWord("oh no, bears!!!"));
+
     }
 
     @Test

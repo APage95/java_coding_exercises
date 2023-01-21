@@ -4,13 +4,17 @@ import java.util.List;
 
 public class Exercise001 {
     public String capitalizeWord(String word) {
-        // Add your code here
-        return "";
+        char firstLetter = word.charAt(0);
+        String upperLetter = String.valueOf(Character.toUpperCase(firstLetter));
+        return word.replaceFirst(String.valueOf(word.charAt(0)), upperLetter);
     }
 
     public String generateInitials(String firstName, String lastName) {
-        // Add your code here
-        return "";
+        char firstInitial = firstName.charAt(0);
+        char secondInitial = lastName.charAt(0);
+        String first = String.valueOf(firstInitial);
+        String second = String.valueOf(secondInitial);
+        return first + "." + second;
     }
 
     public double addVat(double originalPrice, double vatRate) {
