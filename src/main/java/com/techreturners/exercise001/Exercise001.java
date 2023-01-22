@@ -1,5 +1,6 @@
 package com.techreturners.exercise001;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Exercise001 {
@@ -18,17 +19,46 @@ public class Exercise001 {
     }
 
     public double addVat(double originalPrice, double vatRate) {
-        // Add your code here
-        return 0.0;
+        double multiplier = 100;
+        double total = ((vatRate / multiplier) * originalPrice) + originalPrice;
+        double fin = Math.round(total * 100) / 100D;
+        return fin;
     }
 
     public String reverse(String sentence) {
-        // Add your code here
-        return "";
+        StringBuilder gobble = new StringBuilder(sentence);
+        gobble.reverse();
+        return gobble.toString();
     }
 
     public int countLinuxUsers(List<User> users) {
-        // Add your code here
-        return 0;
+
+        ArrayList<User> lads = new ArrayList<>(users);
+
+        int counter = 0;
+
+        for (User useR : lads) {
+
+            String hiUser = useR.getType();
+
+            if (hiUser.equals("Linux")) {
+                counter++;
+            }
+
+        }    return counter;
+
     }
+
+
+//        String[] band = new String[]{"Posh", "Baby", "Sporty", "Ginger", "Scary", "Sleepy"};
+//
+//        for (String member : band) {
+//            member = member.concat(" Spice");
+//        }
+//
+//        for (int counter = 0 ; counter < band.length ; counter++) {
+//            band[counter] = band[counter].concat(" Spice");
+//        }
+//
+
 }
