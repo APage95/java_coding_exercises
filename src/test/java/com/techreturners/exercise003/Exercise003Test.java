@@ -4,8 +4,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.Random;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class Exercise003Test {
 
@@ -51,5 +52,47 @@ public class Exercise003Test {
         assertArrayEquals(expected, ex003.iceCreamFlavours());
     }
 
+    /* Chris' tests below! :) */
+
+    @Test
+    public void checkGetIceCreamCodeForVanilla() {
+
+        String iceCreamFlavour = "Vanilla";
+        int expected = 2;
+
+        assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
+
+    }
+
+    @Test
+    public void checkGetRandomFlavour() {
+
+        Random random = new Random();
+        Exercise003 e3 = new Exercise003();
+        int randomFlavour = random.nextInt(e3.iceCreamFlavours().length);
+        String expected = e3.iceCreamFlavours()[randomFlavour];
+
+        assertEquals(expected, ex003.iceCreamFlavours()[randomFlavour]);
+
+    }
+
+    @Test
+    public void checkGetIceCreamCodeForBubblegumInt() {
+
+        String iceCreamFlavour = "Bubblegum";
+
+        assertEquals(-1, ex003.getIceCreamCode(iceCreamFlavour));
+
+    }
+
+    @Disabled // Give this a go instead of the above if you'd like to tackle it!
+    @Test
+    public void checkGetIceCreamCodeForBubblegumException() {
+
+        String iceCreamFlavour = "Bubblegum";
+
+        assertThrows(Exception.class, () -> ex003.getIceCreamCode(iceCreamFlavour));
+
+    }
 
 }
