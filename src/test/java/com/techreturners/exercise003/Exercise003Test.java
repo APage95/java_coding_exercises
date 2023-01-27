@@ -18,16 +18,17 @@ public class Exercise003Test {
     }
 
     @Test
-    public void checkGetIceCreamCodeForMintChocolateChip() {
+    public void checkGetIceCreamCodeForMintChocolateChip() throws Exception {
         String iceCreamFlavour = "Mint Chocolate Chip";
         int expected = 3;
 
         assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
+
     }
 
 //    @Disabled("You can remove this @Disabled annotation to run the test")
     @Test
-    public void checkGetIceCreamCodeForMangoSorbet() {
+    public void checkGetIceCreamCodeForMangoSorbet() throws Exception {
         String iceCreamFlavour = "Mango Sorbet";
         int expected = 5;
 
@@ -36,7 +37,7 @@ public class Exercise003Test {
 
 //    @Disabled("You can remove this @Disabled annotation to run the test")
     @Test
-    public void checkGetIceCreamCodeForRaspberryRipple() {
+    public void checkGetIceCreamCodeForRaspberryRipple() throws Exception {
         String iceCreamFlavour = "Raspberry Ripple";
         int expected = 1;
 
@@ -55,7 +56,7 @@ public class Exercise003Test {
     /* Chris' tests below! :) */
 
     @Test
-    public void checkGetIceCreamCodeForVanilla() {
+    public void checkGetIceCreamCodeForVanilla() throws Exception {
 
         String iceCreamFlavour = "Vanilla";
         int expected = 2;
@@ -77,7 +78,7 @@ public class Exercise003Test {
     }
 
     @Test
-    public void checkGetIceCreamCodeForBubblegumInt() {
+    public void checkGetIceCreamCodeForBubblegumInt() throws Exception {
 
         String iceCreamFlavour = "Bubblegum";
 
@@ -85,7 +86,7 @@ public class Exercise003Test {
 
     }
 
-    @Disabled // Give this a go instead of the above if you'd like to tackle it!
+
     @Test
     public void checkGetIceCreamCodeForBubblegumException() {
 

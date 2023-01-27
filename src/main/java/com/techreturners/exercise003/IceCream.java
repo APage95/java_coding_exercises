@@ -13,7 +13,6 @@ public class IceCream {
 
     }
 
-
     public String getFlavour() {return flavour;}
 
     public int getCode() {return iceCreamCode;}

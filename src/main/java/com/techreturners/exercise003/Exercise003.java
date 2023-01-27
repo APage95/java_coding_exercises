@@ -1,8 +1,6 @@
 package com.techreturners.exercise003;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Exercise003 {
 
@@ -15,31 +13,23 @@ public class Exercise003 {
 
     IceCream[] stock = {iceCream0, iceCream1, iceCream2, iceCream3, iceCream4, iceCream5};
 
-    int getIceCreamCode(String iceCreamFlavour) {
+    Exception error = new Exception("Hubba bubba get outta my shoppa!");
 
-        if (iceCreamFlavour.equals("Pistachio")){
-            return iceCream0.getCode(); }
+    int getIceCreamCode(String iceCreamFlavour) throws Exception {
 
-        else if(iceCreamFlavour.equals("Raspberry Ripple")){
-            return iceCream1.getCode(); }
+        return switch (iceCreamFlavour) {
+            case "Pistachio" -> iceCream0.getCode();
+            case "Raspberry Ripple" -> iceCream1.getCode();
+            case "Vanilla" -> iceCream2.getCode();
+            case "Mint Chocolate Chip" -> iceCream3.getCode();
+            case "Chocolate" -> iceCream4.getCode();
+            case "Mango Sorbet" -> iceCream5.getCode();
+            default -> throw error;
+        };
 
-        else if(iceCreamFlavour.equals("Vanilla")){
-            return iceCream2.getCode(); }
-
-        else if(iceCreamFlavour.equals("Mint Chocolate Chip")){
-            return iceCream3.getCode(); }
-
-        else if(iceCreamFlavour.equals("Chocolate")){
-            return iceCream4.getCode();}
-
-        else if(iceCreamFlavour.equals("Mango Sorbet")){
-            return iceCream5.getCode(); }
-
-        else { return 00;}
     }
-
-    String[] iceCreamFlavours() {
-
+        String[] iceCreamFlavours() {
+        return Arrays.stream(stock).map(IceCream::getFlavour).toArray(String[]::new);
     }
 
 }
